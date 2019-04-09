@@ -34,6 +34,17 @@
                     {% endif %}
                     {{ form.confirm(class_='form-control') }}
                 </div>
+                <!-- recaptcha -->
+                <div class="form-group">
+                    {{ form.recaptcha.label }}
+                    {% if form.recaptcha.errors %}
+                        {% for e in form.recaptcha.errors %}
+                            <p class="help-block">{{ e }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    {{ form.recaptcha() }}
+                </div>
+                <!-- End recaptcha -->
                 <input class="btn btn-primary" type="submit" value="Register">
             </form>
             <hr>

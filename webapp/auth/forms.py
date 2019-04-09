@@ -1,4 +1,5 @@
 from flask_wtf import FlaskForm as Form
+from flask_wtf import RecaptchaField
 from wtforms.validators import DataRequired , Length , EqualTo , URL
 from wtforms import (
     StringField,
@@ -37,6 +38,9 @@ class Register_Form(Form):
     username = StringField('Username' , [DataRequired() , Length(max=255)])
     password = PasswordField('Password' , [DataRequired()])
     confirm = PasswordField('Confirm Password' , [DataRequired() , EqualTo('password')])
+    
+    # if rechaptcha true
+    recaptcha = RecaptchaField()
 
     def validate(self):
         check_validate = super(Register_Form , self).validate()

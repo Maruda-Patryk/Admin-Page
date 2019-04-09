@@ -2,7 +2,8 @@
 import os
 
 class Config(object):
-    pass
+    RECAPTCHA_PUBLIC_KEY = ""
+    RECAPTCHA_PRIVATE_KEY = ""
 
 class DevConfig(Config):
     DEBUG = True

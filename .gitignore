@@ -1,3 +1,4 @@
 env_admin
 .vscode
 __pycache__
+secret
